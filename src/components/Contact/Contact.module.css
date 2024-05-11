@@ -1,0 +1,23 @@
+.btn {
+    width: 90px;
+    height: 40px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-left: 16px;
+    border: 2px solid #555;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    font-size: 16px;
+    padding: 10px 20px;
+    transition: transform 0.3s;
+
+  }
+  .btn:hover,
+  .btn:focus{
+   
+    border-color: #FFA500;
+    transform: scale(1.1);
+  }
