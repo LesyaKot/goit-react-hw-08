@@ -9,6 +9,7 @@ import { fetchContacts } from "./redux/contactsOps";
 import { selectError, selectIsLoading } from "./redux/selectors";
 import "./App.css";
 
+
 function App() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectIsLoading);

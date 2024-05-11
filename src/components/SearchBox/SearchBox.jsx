@@ -3,6 +3,7 @@ import { setFilter } from "../../redux/filtersSlice";
 import {selectFilters} from '../../redux/selectors'
 import css from "./SearchBox.module.css";
 
+
 export default function SearchBox() {
     
   const dispatch = useDispatch();

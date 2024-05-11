@@ -2,6 +2,7 @@ import css from "./Contact.module.css";
 import { useDispatch } from "react-redux";
 import { deleteContact } from "../../redux/contactsOps";
 
+
 export default function Contact({ id, name, number, hasContacts }) {
   const dispatch = useDispatch();
   const handleDelete = () => dispatch(deleteContact(id));
