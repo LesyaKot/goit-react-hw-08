@@ -1,13 +1,39 @@
-import { Helmet } from "react-helmet";
-import LoginForm from '../components/LogInForm/LogInForm';
+import LogInForm from "../components/LogInForm/LogInForm";
+
+const styles = {
+  container: {
+    minHeight: "calc(100vh - 100px)",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  title: {
+    fontWeight: 530,
+    fontSize: 50,
+    textAlign: "center",
+  },
+};
+
 export default function Login() {
   return (
-    <div>
-      <Helmet>
-        <title>Login</title>
-      </Helmet>
-      <LoginForm />
+    <div style={styles.container}>
+      <h2 style={styles.title}>Please log in</h2>
+      <LogInForm />
     </div>
   );
 }
 
+// import { Helmet } from "react-helmet";
+// import LoginForm from '../components/LogInForm/LogInForm';
+
+// export default function Login() {
+//   return (
+//     <div>
+//       <Helmet>
+//         <title>Log in</title>
+//       </Helmet>
+//       <LoginForm />
+//     </div>
+//   );
+// }

@@ -1,26 +1,40 @@
-import { useDispatch } from 'react-redux';
-import { addContact } from '../../redux/contacts/operations';
-import css from './ContactEditor.module.css';
+import { useDispatch } from "react-redux";
+import { addContact } from "../../redux/contacts/operations";
+import css from "./ContactEditor.module.css";
 
 export default function ContactEditor() {
   const dispatch = useDispatch();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const text = form.elements.text.value;
-    if (text !== '') {
-      dispatch(addContact(text));
-      form.reset();
-      return;
-    }
-    alert('Contact cannot be empty. Enter some info!');
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+
+    const name = form.elements.name.value;
+    const number = form.elements.number.value;
+
+    dispatch(addContact({ name, number }));
+    form.reset();
   };
 
   return (
     <form className={css.form} onSubmit={handleSubmit}>
-      <input name="text" className={css.input} />
-      <button type="submit" className={css.button}>
+      <input
+        className={css.input}
+        type="text"
+        name="name"
+        pattern="[a-zA-Zа-яА-Я\s']+"
+        placeholder="Enter a name..."
+        required
+      />
+      <input
+        className={css.input}
+        type="tel"
+        name="number"
+        pattern="^(\+?\d{1,3})?[-.\s]?\(?\d{1,4}\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$"
+        placeholder="Enter a number..."
+        required
+      />
+      <button className={css.btn} type="submit">
         Add contact
       </button>
     </form>

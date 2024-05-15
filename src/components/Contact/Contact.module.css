@@ -9,10 +9,10 @@
     border: 2px solid #555;
     margin-top: auto;
     margin-bottom: auto;
-
     font-size: 16px;
     padding: 10px 20px;
     transition: transform 0.3s;
+    
   }
   .btn:hover,
   .btn:focus{

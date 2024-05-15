@@ -1,8 +1,8 @@
-import css from './Layout.module.css'
+// import css from './Layout.module.css'
 
 
-export default function Layout ({children}){
-    return(
-        <main className={css.wrapper}>{children}</main>
-    )
-}
+// export default function Layout ({children}){
+//     return(
+//         <main className={css.wrapper}>{children}</main>
+//     )
+// }

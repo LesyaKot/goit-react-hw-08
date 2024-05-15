@@ -1,22 +1,48 @@
-import favicon from "../public/favicon.png";
+// import favicon from "../public/favicon.png";
+// import { lazy, Suspense } from "react";
+// import { Route, Routes } from "react-router-dom";
+// import Layout from "./Layout";
 
-import { useEffect, lazy } from 'react';
-import { useDispatch } from 'react-redux';
-import { Route, Routes } from 'react-router-dom';
+// const HomePage = lazy(() => import("../src/pages/Home"));
+// const RegisterPage = lazy(() => import("../src/pages/Register"));
+// const LoginPage = lazy(() => import("../src/pages/Login"));
+// const ContactsPage = lazy(() => import("../src/pages/Contacts"));
 
-import { Layout } from './Layout';
-import { PrivateRoute } from './PrivateRoute';
-import { RestrictedRoute } from './RestrictedRoute';
+// export default function App() {
+//   return (
+//     <Layout>
+//       <Suspense fallback={null}>
+//         <Routes>
+//           <Route path="/" element={<HomePage />} />
+//           <Route path="/register" element={<RegisterPage />} />
+//           <Route path="/login" element={<LoginPage />} />
+//           <Route path="/contacts" element={<ContactsPage />} />
+//         </Routes>
+//       </Suspense>
+//     </Layout>
+//   );
+// }
 
-import { refreshUser } from '../src/redux/auth/operations';
-import { useAuth } from '../src/redux/auth/selectors';
+// dana1@gmail.com
+// lesyako00t83@gmail.com
 
-const HomePage = lazy(() => import('../src/pages/Home'));
-const RegisterPage = lazy(() => import('../src/pages/Register'));
-const LoginPage = lazy(() => import('../src/pages/Login'));
-const ContactsPage = lazy(() => import('../src/pages/Contacts'));
+import { useEffect, lazy } from "react";
+import { useDispatch } from "react-redux";
+import { Route, Routes } from "react-router-dom";
+import Layout from "./Layout";
+import PrivateRoute from "./PrivateRoute";
+import RestrictedRoute from "./RestrictedRoute";
+import SearchBox from "./components/SearchBox/SearchBox";
+import { refreshUser } from "../src/redux/auth/operations";
+import { useAuth } from "../src/redux/auth/selectors";
+import "./App.css";
 
-export const App = () => {
+const HomePage = lazy(() => import("../src/pages/Home"));
+const RegisterPage = lazy(() => import("../src/pages/Register"));
+const LoginPage = lazy(() => import("../src/pages/Login"));
+const ContactsPage = lazy(() => import("../src/pages/Contacts"));
+
+export default function App() {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
 
@@ -33,26 +59,31 @@ export const App = () => {
         <Route
           path="/register"
           element={
-            <RestrictedRoute redirectTo="/tasks" component={<RegisterPage />} />
+            <RestrictedRoute
+              redirectTo="/contacts"
+              component={<RegisterPage />}
+            />
           }
         />
         <Route
           path="/login"
           element={
-            <RestrictedRoute redirectTo="/tasks" component={<LoginPage />} />
+            <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
           }
         />
         <Route
-          path="/tasks"
+          path="/contacts"
           element={
-            <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+            <>
+              <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+              <SearchBox />
+            </>
           }
         />
       </Route>
     </Routes>
   );
-};
-
+}
 
 // import { useEffect } from "react";
 // import { useDispatch, useSelector } from "react-redux";
@@ -64,12 +95,10 @@ export const App = () => {
 // import { selectError, selectIsLoading } from "./redux/contacts/selectors";
 // import "./App.css";
 
-
 // const HomePage = lazy(() => import('../src/pages/Home'));
 // const RegisterPage = lazy(() => import('../src/pages/Register'));
 // const LoginPage = lazy(() => import('../src/pages/Login'));
 // const ContactsPage = lazy(() => import('../src/pages/Contacts'));
-
 
 // function App() {
 //   const dispatch = useDispatch();

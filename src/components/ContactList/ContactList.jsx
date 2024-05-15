@@ -1,14 +1,10 @@
 import css from "./ContactList.module.css";
 import { useSelector } from "react-redux";
-import { selectContacts} from "../../redux/contacts/selectors";
+import { selectContacts } from "../../redux/contacts/selectors";
 import Contact from "../Contact/Contact";
 
-
 export default function ContactList() {
-
   const contacts = useSelector(selectContacts);
-  
-  console.log(contacts)
   return (
     <>
       <div className={css.wrapper}>

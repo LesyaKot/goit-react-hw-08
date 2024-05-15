@@ -1,20 +1,36 @@
-import { NavLink } from 'react-router-dom';
-import { useAuth } from '../../redux/auth/selectors';
-import css from './Navigation.module.css';
+// import { NavLink } from "react-router-dom";
+// import css from "./Navigation.module.css";
 
-export const Navigation = () => {
+// export default function Navigation() {
+//   return (
+//     <nav>
+//       <NavLink className={css.link} to="/">
+//         Home
+//       </NavLink>
+//       <NavLink className={css.link} to="/contacts">
+//         Contacts
+//       </NavLink>
+//     </nav>
+//   );
+// }
+
+import { NavLink } from "react-router-dom";
+import { useAuth } from "../../redux/auth/selectors";
+import css from "./Navigation.module.css";
+
+export default function Navigation() {
   const { isLoggedIn } = useAuth();
 
   return (
-    <nav>
+    <nav className={css.nav}>
       <NavLink className={css.link} to="/">
         Home
       </NavLink>
       {isLoggedIn && (
         <NavLink className={css.link} to="/contacts">
-          Tasks
+          Contacts
         </NavLink>
       )}
     </nav>
   );
-};
+}

@@ -1,0 +1,33 @@
+.wrap {
+  display: flex;
+  gap: 24px;
+}
+.user {
+  color: #213547;
+  font-size: large;
+  font-weight: 500;
+}
+.user:hover,
+.user:focus {
+  color: #ffa500;
+}
+.btn {
+  width: 140px;
+  height: 50px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #555;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+  padding: 10px 20px;
+  transition: transform 0.3s;
+ 
+}
+.btn:hover,
+.btn:focus {
+  border-color: #ffa500;
+  transform: scale(1.1);
+}
