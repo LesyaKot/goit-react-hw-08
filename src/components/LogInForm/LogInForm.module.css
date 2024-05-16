@@ -12,7 +12,7 @@
   margin-right: auto;
   margin-left: auto;
 }
-.input{
+.input {
   padding: 8px;
   width: 220px;
   border-radius: 4px;
@@ -37,12 +37,12 @@
 }
 .btn:hover,
 .btn:focus {
-  border-color:#FFA500;
+  border-color: #ffa500;
   transform: scale(1.1);
 }
 
 .input:hover,
 .input:focus {
-  border-color: #FFA500;
+  border-color: #ffa500;
   transform: scale(1.1);
 }

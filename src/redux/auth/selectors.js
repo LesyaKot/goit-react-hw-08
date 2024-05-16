@@ -4,7 +4,7 @@ export const selectUser = (state) => state.auth.user;
 
 export const selectIsRefreshing = (state) => state.auth.isRefreshing;
 
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 
 export const useAuth = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);

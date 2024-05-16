@@ -3,8 +3,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 24px;
-    margin-bottom: 200px;
+    margin-top: 12px;
+    margin-bottom: 12px;
   }  
   .input {
     padding: 12px;
@@ -12,6 +12,7 @@
     border-radius: 4px;
     display: flex;
     justify-content: center;
+    margin-left: 24px;
   }  
   .input:hover,
   .input:focus {
@@ -25,4 +26,21 @@
   .text:focus {
     color:#FFA500;
     transform: scale(1.1);
+  }
+  .name{
+    font-weight: 500;
+    font-size:large;
+  }
+
+  .number{
+    font-weight: 500;
+    font-size:large;
+  }
+
+  .item{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 24px;
+    margin-bottom: 24px;
   }

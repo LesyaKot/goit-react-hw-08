@@ -1,11 +1,13 @@
 .wrap {
   display: flex;
-  gap:24px;
+  gap: 24px;
 }
+
 .link {
   color: #213547;
   font-size: large;
 }
+
 .link:hover,
 .link:focus {
   color: #ffa500;

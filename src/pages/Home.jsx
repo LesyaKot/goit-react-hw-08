@@ -1,31 +1,26 @@
 const styles = {
   container: {
-    minHeight: 'calc(100vh - 100px)',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    
+    minHeight: "calc(100vh - 100px)",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
   },
   title: {
     fontWeight: 530,
     fontSize: 50,
-    textAlign: 'center',
+    textAlign: "center",
   },
-  
-}
+  text: {
+    paddingTop: 140,
+  },
+};
 
 export default function Home() {
   return (
     <div style={styles.container}>
-      <h2 style={styles.title}>
-        My Phonebook {' '}
-        
-      </h2>
+      <h2 style={styles.title}>My Phonebook</h2>
+      <p style={styles.text}>Copyright © Lesya 2024.</p>
     </div>
   );
 }
-
-// <span role="img" aria-label="Greeting icon">
-//           {/* підібрати іконку абощо!!!!! */}
-//           💁‍♀️
-//         </span>

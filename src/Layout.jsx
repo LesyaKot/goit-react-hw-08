@@ -1,14 +1,13 @@
-
-import { Suspense } from 'react';
-import { Outlet } from 'react-router-dom';
-import { Toaster } from 'react-hot-toast';
-import AppBar  from './components/AppBar/AppBar';
+import { Suspense } from "react";
+import { Outlet } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
+import AppBar from "./components/AppBar/AppBar";
 
 export default function Layout({ children }) {
   return (
-    <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 16px' }}>
+    <div style={{ maxWidth: 960, margin: "0 auto", padding: "0 16px" }}>
       <AppBar />
-{ children }
+      {children}
       <Suspense fallback={null}>
         <Outlet />
       </Suspense>
@@ -16,18 +15,3 @@ export default function Layout({ children }) {
     </div>
   );
 }
-
-
-// import { Toaster } from "react-hot-toast";
-// import AppBar from './components/AppBar/AppBar';
-// // import css from "./Layout.module.css";
-
-// export default function Layout({ children }) {
-//   return (
-//     <div>
-//       <AppBar />
-//       {children}
-//       <Toaster position="top-center" reverseOrder={false} />
-//     </div>
-//   );
-// }

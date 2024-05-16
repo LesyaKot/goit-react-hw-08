@@ -1,3 +1,1 @@
-
-
-export const selectFilters = (state) => state.filters.value.toLowerCase();
+export const selectFilters = (state) => state.filters.value;

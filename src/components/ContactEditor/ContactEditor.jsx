@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import { addContact } from "../../redux/contacts/operations";
+import { toast } from "react-hot-toast";
 import css from "./ContactEditor.module.css";
 
 export default function ContactEditor() {
@@ -7,13 +8,14 @@ export default function ContactEditor() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const form = event.target;
 
+    const form = event.currentTarget;
     const name = form.elements.name.value;
     const number = form.elements.number.value;
 
     dispatch(addContact({ name, number }));
     form.reset();
+    toast.success("It's added !!!");
   };
 
   return (

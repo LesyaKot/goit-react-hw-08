@@ -1,11 +1,13 @@
-.nav{
+.nav {
   display: flex;
-  gap:12px;
+  gap: 12px;
 }
-.link{
-    color:#213547;
-    font-size:large;
+
+.link {
+  color: #213547;
+  font-size: large;
 }
+
 .link:hover,
 .link:focus {
   color: #ffa500;
